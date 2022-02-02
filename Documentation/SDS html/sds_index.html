@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>System Design Specification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css\css.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      position: relative;
+  }
+  ul.nav-pills {
+      position:fixed;
+  }
+  div.col-8 div {
+      height: 200px;
+  }
+  .editme{
+    width:100%;
+
+  }
+
+
+</style>
+</head>
+<body style="background-color:#D5DBDB; color:black;" data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+<nav class="navbar navbar-expand-sm " style="background-color:#AAB7B8 ">
+  <!-- Brand/logo -->
+
+  <img style="width:15%"></img>
+  <header class="page header text-#1B4F72 "><h1 style="padding-left:10px;">System Design Specification </h1></header>
+
+  <!-- Links -->
+
+
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-sm-2 col-4" id="myScrollspy" style="background-color:#AAB7B8 ;">
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" >Introduction</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec1.1">Purpose</a>
+
+          </div>
+
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Document Conventions</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec2.1">Description</a>
+          </div>
+        </li>
+
+
+
+
+
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Design Components</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec3.1">Description</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">High-Level<br>Component-Design</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec4.1">User Interfaces</a>
+            <a class="dropdown-item" href="#sec4.2">Hardware Interfaces</a>
+            <a class="dropdown-item" href="#sec4.3">Software Interfaces</a>
+            <a class="dropdown-item" href="#sec4.4">Communications Interfaces</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Class Diagrams</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec5.1">Detailed Class Diagram</a>
+              <a class="dropdown-item" href="#sec5.2">Detailed Class Description</a>
+
+
+          </div>
+        </li>
+
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Database Design</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec6.1">ER Diagram</a>
+
+          </div>
+        </li>
+        <li class="nav-item">
+      <a class="nav-link " href="#sec7">Implementation Plan</a>
+        </li>
+
+
+      </ul>
+    </nav>
+
+    <div style="padding-top:30px; padding-left:30px; padding-right:150px;" class="col-sm-10 col-8">
+      <h2 style="color:#1B4F72   ;">1. Introduction</h2>
+      <h4 id="sec1.1">1.1 Purpose</h4>
+      <p>This software design specification is made with the purpose of outlining the software design and architecture of our project “Fitness365” in detail. This document will provide developers an insight in meeting client’s needs efficiently and effectively. Moreover, this SDS document facilitates communication and understanding of the system by providing several views of the system design.
+
+      <h2 style="color:#1B4F72   ;">2. Document Conventions</h2>
+      <h4 id="sec2.1">2.1 Description</h4>
+      <p> The typographical convention in this SDS contain the standard IEEE Standard 1016 - IEEE Recommended Practice for Software Design Specifications. </p>
+      <p> Main Titles: Font: Calibri, Face: Bold, Size: 18 </p>
+      <p> Sub Section Titles: Font: Calibri, Face: Bold, Size: 14 </p>
+      <p> Other Explanations: Font: Calibri, Face: Normal, Size: 12 </p>
+
+      <h2 style="color:#1B4F72   ;">3. Design Components</h2>
+      <h4 id="sec3.1">2.1 Description</h4>
+
+      <br><br>
+
+
+
+        <h2 style="color:#1B4F72 ;">5. Class Diagram</h2>
+            <h4 id="sec5.1">5.1 Detailed Class Diagrams</h4> <br>
+            <p> This section focuses on the high level class diagram which demonstrates the relation between the classes. A detailed description of each class is given for a clear grasp of their function in the product. </p>
+            <p class="UI"><img class="editme" src="img/SDS_class_diagram.png"></p>
+            <h4 id="sec5.2">5.2 Detailed Class Description</h4> <br>
+            <ul>
+      <li><h5>User:</h5></li>
+        This is an abstract class and it stores all the information of the users (both admin and member). It is then extended by admin and member to add their exclusive property and funcions.
+      <li><h5 >Admin:</h5></li>
+        This class extends the user class. It can register user, set workout routine, diet chart, view transactions and many more.
+      <li><h5 >Member</h5></li>
+        This class extends the user class. It can perform functions like pay monthly fee, submit attendance etc.
+      <li><h5>Attendance</h5></li>
+        It stores user attendance. It can generate attendance pattern checker.
+    <li>  <h5>Diet Chart</h5></li>
+
+        It stores all the information of the member's dietchart.
+
+      <li><h5 >Work Out Routine</h5></li>
+
+        It stores all the information of the member workout routine.
+
+    <li>  <h5>Payment Record</h5></li>
+        It stores the user payment record and updates that in the database.
+      <li><h5>Transaction</h5></li>
+
+        It calculates the gym's net profit every month and reports to the admin.
+    </ul>
+      <h2 style="color:#1B4F72 ;"></h2>
+      <br>
+        <h2 style="color:#1B4F72 ;">6. Database Design</h2>
+          <h4 id="sec6.1">6.1 ER Diagram</h4>
+          <p>The image below shows various relationships between the entities of our database (ER Diagram)</p>
+          <p><img class="editme" src="img/ER_NEW.png"> </p>
+
+
+      </div>
+
+
+
+</body>
+
+</html>
